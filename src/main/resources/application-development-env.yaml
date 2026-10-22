@@ -16,7 +16,7 @@ spring:
                 - products:write
             token:
               access-token-time-to-live: 15m
-              access-token-format: reference
+              access-token-format: self-contained
 
           algashop-ordering-serivce-client:
             registration:
