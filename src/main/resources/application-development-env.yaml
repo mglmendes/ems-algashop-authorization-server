@@ -16,6 +16,8 @@ spring:
                 - products:read
                 - products:write
                 - products:stock:write
+                - products:images:write
+                - products:images:read
                 - categories:read
                 - categories:write
             token:
