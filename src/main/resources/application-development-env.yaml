@@ -13,6 +13,13 @@ spring:
                 - client_secret_basic
               client-secret: "{noop}testing123"
               scopes:
+                - orders:read
+                - orders:write
+                - customers:read
+                - customers:write
+                - shopping-carts:read
+                - shopping-carts:write
+                - shipping-costs:preview
                 - products:read
                 - products:write
                 - products:stock:write
