@@ -35,7 +35,7 @@ spring:
               access-token-time-to-live: 15m
               access-token-format: self-contained
 
-          algashop-ordering-serivce-client:
+          algashop-ordering-service-client:
             registration:
               client-id: algashop-ordering-service
               authorization-grant-types:
