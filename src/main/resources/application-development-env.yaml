@@ -96,6 +96,18 @@ spring:
                 - customers:write
             token:
               access-token-time-to-live: 15m
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authorization_server
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration,classpath:db/testdata
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/authorization_server
 
 logging:
   level:
