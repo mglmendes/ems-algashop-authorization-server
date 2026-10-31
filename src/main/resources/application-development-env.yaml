@@ -49,12 +49,12 @@ spring:
               scopes:
                 - products:read
             token:
-              access-token-time-to-live: 15m
+              access-token-time-to-live: 5m
               access-token-format: self-contained
 
           algashop-ecommerce-web-client:
             registration:
-              client-id: algashop-ecommmerce-web
+              client-id: algashop-ecommerce-web
               client-secret: "{noop}ecommerce123"
               client-name: AlgaShop Ecommerce Web
               authorization-grant-types:
@@ -94,3 +94,6 @@ spring:
             token:
               access-token-time-to-live: 15m
 
+logging:
+  level:
+    org.springframework.security: TRACE
