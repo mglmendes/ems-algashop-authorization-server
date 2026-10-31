@@ -74,7 +74,7 @@ spring:
                 - customers:write
                 - shopping-carts:read
                 - shopping-carts:write
-            require-authorization-consent: false
+            require-authorization-consent: true
             require-proof-key: false
             token:
               access-token-time-to-live: 5m
