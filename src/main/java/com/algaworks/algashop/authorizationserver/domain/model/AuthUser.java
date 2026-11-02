@@ -23,7 +23,7 @@ public class AuthUser extends AbstractAuditableAggregateRoot<AuthUser>{
     private String password;
 
     private String name;
-    private Boolean enabled;
+    private boolean enabled;
 
     @Enumerated(EnumType.STRING)
     private AuthUserType type;
