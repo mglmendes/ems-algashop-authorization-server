@@ -1,4 +1,7 @@
 spring:
+  session:
+    store-type: jdbc
+    timeout: 30m
   security:
     oauth2:
       authorizationserver:
@@ -104,7 +107,7 @@ spring:
     show-sql: true
   flyway:
     enabled: true
-    locations: classpath:db/migration,classpath:db/testdata
+    locations: classpath:db/migration #,classpath:db/testdata
     user: postgres
     password: postgres
     url: jdbc:postgresql://localhost:5432/authorization_server
