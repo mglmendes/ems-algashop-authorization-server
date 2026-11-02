@@ -1,5 +1,7 @@
 package com.algaworks.algashop.authorizationserver.infrastructure.security.config;
 
+import com.algaworks.algashop.authorizationserver.infrastructure.security.OidcUserInfoMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -14,7 +16,10 @@ import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class AuthorizationServerSecurityConfig {
+
+    private final OidcUserInfoMapper oidcUserInfoMapper;
 
     @Bean
     @Order(1)
@@ -23,7 +28,8 @@ public class AuthorizationServerSecurityConfig {
 
         http.securityMatcher(authorizationServer.getEndpointsMatcher())
                 .with(authorizationServer, configurer -> {
-                    configurer.oidc(Customizer.withDefaults());
+                    configurer.oidc(oidc -> oidc.userInfoEndpoint(userInfo ->
+                            userInfo.userInfoMapper(oidcUserInfoMapper)));
                 })
                 .authorizeHttpRequests(authorize ->
                         authorize.anyRequest().authenticated())
