@@ -115,3 +115,16 @@ spring:
 logging:
   level:
     org.springframework.security: TRACE
+
+management:
+  info:
+    env.enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+info:
+  app.name: AlgaShop Authorization Server
